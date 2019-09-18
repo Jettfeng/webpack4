@@ -8,4 +8,9 @@
 <p>3、在package.json里配置scripts "bundle": "webpack"，当运行npm run bundle时，首先查找该工程里面是否有webpack命令，如果没有，再去查找全局的webpack</p>
 <p>4.webpack运行方式，全局安装：webpack index.js；局部安装（没配置scripts）：npx webpack；局部安装（配置了scripts，例如"bundle": "webpack"）：npm run bundle</p>
 <h2>2-5 浅析 Webpack 打包输出内容</h2>
+<h2>3-1 什么是 loader</h2>
+<p>安装file-loader：npm install file-loader -D</p>
+<p></p>
+<p></p>
+<p></p>
 <p></p>

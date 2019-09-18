@@ -86,25 +86,14 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./src/content.js":
+/***/ "./src/avatar.jpg":
 /*!************************!*\
-  !*** ./src/content.js ***!
+  !*** ./src/avatar.jpg ***!
   \************************/
 /*! no static exports found */
-/***/ (function(module, exports) {
+/***/ (function(module, exports, __webpack_require__) {
 
-eval("function Content() {\r\n    var dom = document.getElementById('root');\r\n    var content = document.createElement('div');\r\n    content.innerText = 'content';\r\n    dom.append(content);\r\n}\r\n\r\nmodule.exports = Content;\n\n//# sourceURL=webpack:///./src/content.js?");
-
-/***/ }),
-
-/***/ "./src/header.js":
-/*!***********************!*\
-  !*** ./src/header.js ***!
-  \***********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function Header() {\r\n\tvar dom = document.getElementById('root');\r\n\tvar header = document.createElement('div');\r\n\theader.innerText = 'header';\r\n\tdom.append(header);\r\n}\r\n\r\nmodule.exports = Header;\n\n//# sourceURL=webpack:///./src/header.js?");
+eval("module.exports = __webpack_require__.p + \"bd7a45571e4b5ccb8e7c33b7ce27070a.jpg\";\n\n//# sourceURL=webpack:///./src/avatar.jpg?");
 
 /***/ }),
 
@@ -112,21 +101,11 @@ eval("function Header() {\r\n\tvar dom = document.getElementById('root');\r\n\tv
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var Header = __webpack_require__(/*! ./header.js */ \"./src/header.js\");\r\nvar Sidebar = __webpack_require__(/*! ./sidebar.js */ \"./src/sidebar.js\");\r\nvar Content = __webpack_require__(/*! ./content.js */ \"./src/content.js\");\r\n\r\nnew Header();\r\nnew Sidebar();\r\nnew Content();\n\n//# sourceURL=webpack:///./src/index.js?");
-
-/***/ }),
-
-/***/ "./src/sidebar.js":
-/*!************************!*\
-  !*** ./src/sidebar.js ***!
-  \************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-eval("function Sidebar() {\r\n\tvar dom = document.getElementById('root');\r\n\tvar sidebar = document.createElement('div');\r\n\tsidebar.innerText = 'sidebar';\r\n\tdom.append(sidebar);\r\n}\r\n\r\nmodule.exports = Sidebar;\n\n//# sourceURL=webpack:///./src/sidebar.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./avatar.jpg */ \"./src/avatar.jpg\");\n/* harmony import */ var _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_avatar_jpg__WEBPACK_IMPORTED_MODULE_0__);\n\r\nvar img = new Image()\r\nimg.src = _avatar_jpg__WEBPACK_IMPORTED_MODULE_0___default.a\r\nvar root = document.getElementById('root')\r\nroot.append(img)\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
