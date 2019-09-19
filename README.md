@@ -10,7 +10,8 @@
 <h2>2-5 浅析 Webpack 打包输出内容</h2>
 <h2>3-1 什么是 loader</h2>
 <p>安装file-loader：npm install file-loader -D</p>
-<p></p>
-<p></p>
+<h2>3-2 使用 Loader 打包静态资源（图片篇）</h2>
+<p>安装url-loader：npm install url-loader -D</p>
+<p>url打包后，图片默认为base64</p>
 <p></p>
 <p></p>

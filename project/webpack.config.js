@@ -10,7 +10,12 @@ module.exports = {
             {
                 test: /\.(jpg|png|gif)$/,
                 use: {
-                    loader: 'file-loader'
+                    loader: 'url-loader',
+                    options: {
+                        name: '[name]_[hash].[ext]',
+                        outputPath: 'images/',
+                        limit: 10240 //图片小于10240打包成base64，大于等于10240kb，打包到dist目录下的images目录下
+                    }
                 }
             }
         ]
