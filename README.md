@@ -13,5 +13,19 @@
 <h2>3-2 使用 Loader 打包静态资源（图片篇）</h2>
 <p>安装url-loader：npm install url-loader -D</p>
 <p>url打包后，图片默认为base64</p>
+<h2>3-3 使用 Loader 打包静态资源（样式篇 - 上）</h2>
+<p>安装style-loader, css-loader：npm install style-loader css-loader -D</p>
+<h2>3-4 使用 Loader 打包静态资源（样式篇 - 下）</h2>
+<p>安装sass-loader：npm install sass-loader node-sass --save-dev</p>
+<p>安装postcss-loader：npm i -D postcss-loader</p>
+<p>安装autoprefixer：npm install autoprefixer -D,使用autoprefixer时最好设置一下package.json里面的browserslist，如果浏览器版本比较新，不会自动添加前缀</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <p></p>
 <p></p>
