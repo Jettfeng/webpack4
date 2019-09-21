@@ -19,10 +19,11 @@
 <p>安装sass-loader：npm install sass-loader node-sass --save-dev</p>
 <p>安装postcss-loader：npm i -D postcss-loader</p>
 <p>安装autoprefixer：npm install autoprefixer -D,使用autoprefixer时最好设置一下package.json里面的browserslist，如果浏览器版本比较新，不会自动添加前缀</p>
-<p></p>
-<p></p>
-<p></p>
-<p></p>
+<h2>3-5 使用 plugins 让打包更便捷</h2>
+<p>安装html-webpack-plugin：npm install --save-dev html-webpack-plugin</p>
+<p>html-webpack-plugin:会在打包结束后自动生产一个html文件，并把打包后的js自动引入到这个html中</p>
+<p>安装clean-webpack-plugin：npm install --save-dev clean-webpack-plugin</p>
+<p>clean-webpack-plugin：构建前清理 /dist 文件夹</p>
 <p></p>
 <p></p>
 <p></p>

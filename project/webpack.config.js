@@ -1,4 +1,8 @@
+
 const path = require('path')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+
 module.exports = {
     mode: 'development',//默认production，production会对代码进行压缩
     entry: {
@@ -28,8 +32,13 @@ module.exports = {
             }
         ]
     },
+    plugins: [
+        new CleanWebpackPlugin(), //构建前清理dist文件夹
+        new HtmlWebpackPlugin({
+            template: 'src/index.html'
+        })],
     output: {
-        filename: 'bundle.js',
+        filename: 'dist.js',
         path: path.resolve(__dirname, 'dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }
 }
