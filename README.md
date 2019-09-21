@@ -25,6 +25,7 @@
 <p>安装clean-webpack-plugin：npm install --save-dev clean-webpack-plugin</p>
 <p>clean-webpack-plugin：构建前清理 /dist 文件夹</p>
 <h2>3-6 Entry 与 Output 的基础配置</h2>
+<h2>3-7 SourceMap 的配置</h2>
 <p></p>
 <p></p>
 <p></p>

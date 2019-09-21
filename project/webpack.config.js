@@ -5,9 +5,9 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 module.exports = {
     mode: 'development',//默认production，production会对代码进行压缩
+    devtool: 'inline-source-map', //配置source-map，如果关闭source-map，当打包后的文件有报错后，只提错误在打包后文件中的位置
     entry: {
-        main: './src/index.js',//入口为多个文件，输出filename不能写死
-        sub: './src/index.js'
+        main: './src/index.js'
     },
     // entry: './src/index.js', 简写
     module: {
@@ -40,7 +40,6 @@ module.exports = {
         })],
     output: {
         filename: '[name].js',
-        publicPath: 'https://cdn.example.com/assets/',//打包后服务器里面的路径，针对于静态资源翻到cdn的情况
         path: path.resolve(__dirname, 'dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }
 }
