@@ -24,6 +24,7 @@
 <p>html-webpack-plugin:会在打包结束后自动生产一个html文件，并把打包后的js自动引入到这个html中</p>
 <p>安装clean-webpack-plugin：npm install --save-dev clean-webpack-plugin</p>
 <p>clean-webpack-plugin：构建前清理 /dist 文件夹</p>
+<h2>3-6 Entry 与 Output 的基础配置</h2>
 <p></p>
 <p></p>
 <p></p>
