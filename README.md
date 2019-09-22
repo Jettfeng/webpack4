@@ -26,9 +26,10 @@
 <p>clean-webpack-plugin：构建前清理 /dist 文件夹</p>
 <h2>3-6 Entry 与 Output 的基础配置</h2>
 <h2>3-7 SourceMap 的配置</h2>
-<p></p>
-<p></p>
-<p></p>
+<h2>3-8 使用 WebpackDevServer 提升开发效率</h2>
+<p>在package.json里面加上--watch，每当代码有变动时，自动重新打包</p>
+<p>安装webpack-dev-server：npm install webpack-dev-server --save-dev</p>
+<p>安装在中间件：npm install --save-dev express webpack-dev-middleware</p>
 <p></p>
 <p></p>
 <p></p>

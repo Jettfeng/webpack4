@@ -9,7 +9,10 @@ module.exports = {
     entry: {
         main: './src/index.js'
     },
-    // entry: './src/index.js', 简写
+    devServer: {
+        contentBase: './dist',
+        open:true
+    },
     module: {
         rules: [
             {
@@ -39,6 +42,7 @@ module.exports = {
             template: 'src/index.html'
         })],
     output: {
+        publicPath:'/',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }
