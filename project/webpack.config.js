@@ -13,8 +13,8 @@ module.exports = {
     devServer: {
         contentBase: './dist',
         open: true,
-        // hot: true, //模块热更新
-        //hotOnly: true //浏览器不自动刷新
+        hot: true, //模块热更新
+        hotOnly: true //浏览器不自动刷新,默认报错的时候HMR会重新刷新页面
     },
     module: {
         rules: [
@@ -44,7 +44,7 @@ module.exports = {
             template: 'src/index.html'
         }),
         new CleanWebpackPlugin(), //构建前清理dist文件夹
-        // new webpack.HotModuleReplacementPlugin() HMR
+        new webpack.HotModuleReplacementPlugin() //HMR
     ],
     output: {
         publicPath: '/',
