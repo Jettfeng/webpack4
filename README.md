@@ -49,8 +49,9 @@
 <p>"useESModules": false</p>
 <p>}]]</p>
 <p>如果将babel-loader配置corejs该了，比如corejs：2，则需要额外安装：npm install --save @babel/runtime-corejs2</p>
-<p></p>
-<p></p>
+<h2>3-13 Webpack 实现对React框架代码的打包</h2>
+<p>安装react相关：npm install react react-dom --save</p>
+<p>安装@babel/preset-react：npm install --save-dev @babel/preset-react</p>
 <p></p>
 <p></p>
 <p></p>
