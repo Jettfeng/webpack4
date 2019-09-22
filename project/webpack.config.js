@@ -5,7 +5,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 const webpack = require('webpack')
 
 module.exports = {
-    mode: 'development',//默认production，production会对代码进行压缩
+    mode: 'development',//'production',//默认production，production会对代码进行压缩
     devtool: 'inline-source-map', //配置source-map，如果关闭source-map，当打包后的文件有报错后，只提错误在打包后文件中的位置
     entry: {
         main: './src/index.js'
@@ -65,8 +65,10 @@ module.exports = {
         new CleanWebpackPlugin(), //构建前清理dist文件夹
         new webpack.HotModuleReplacementPlugin() //HMR
     ],
+    optimization: { //tree shaking,production环境默认函数有效
+        usedExports: true
+    },
     output: {
-        publicPath: '/',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }

@@ -52,6 +52,15 @@
 <h2>3-13 Webpack 实现对React框架代码的打包</h2>
 <p>安装react相关：npm install react react-dom --save</p>
 <p>安装@babel/preset-react：npm install --save-dev @babel/preset-react</p>
+<h2>4-1 Tree Shaking 概念详解</h2>
+<p>webpack.config.js配置：</p>
+<p>optimization: {</p>
+<p> usedExports: true</p>
+<p>}</p>
+<p>除了配置webpack.config.js还需要配置package.json,不然不会生效，package.json配置如下</p>
+<p>"sideEffects": false</p>
+<p></p>
+<p></p>
 <p></p>
 <p></p>
 <p></p>
