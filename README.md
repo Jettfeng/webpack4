@@ -30,6 +30,7 @@
 <p>在package.json里面加上--watch，每当代码有变动时，自动重新打包</p>
 <p>安装webpack-dev-server：npm install webpack-dev-server --save-dev</p>
 <p>安装在中间件：npm install --save-dev express webpack-dev-middleware</p>
+<h2>3-9 Hot Module Replacement 热模块更新（1）</h2>
 <p></p>
 <p></p>
 <p></p>

@@ -2,6 +2,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { CleanWebpackPlugin } = require("clean-webpack-plugin")
+const webpack = require('webpack')
 
 module.exports = {
     mode: 'development',//默认production，production会对代码进行压缩
@@ -11,7 +12,9 @@ module.exports = {
     },
     devServer: {
         contentBase: './dist',
-        open:true
+        open: true,
+        // hot: true, //模块热更新
+        //hotOnly: true //浏览器不自动刷新
     },
     module: {
         rules: [
@@ -27,22 +30,24 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'] //分别用到style-loader和css-loader,css-loader处理css文件；style-loader将编译后的css插入head
-            },
-            {
                 test: /\.scss$/,
                 use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'] //sass-loader将scss编译成css
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
             }
         ]
     },
     plugins: [
-        new CleanWebpackPlugin(), //构建前清理dist文件夹
         new HtmlWebpackPlugin({
             template: 'src/index.html'
-        })],
+        }),
+        new CleanWebpackPlugin(), //构建前清理dist文件夹
+        // new webpack.HotModuleReplacementPlugin() HMR
+    ],
     output: {
-        publicPath:'/',
+        publicPath: '/',
         filename: '[name].js',
         path: path.resolve(__dirname, 'dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }
