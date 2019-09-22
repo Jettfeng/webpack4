@@ -21,12 +21,21 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                loader: "babel-loader",//只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
-                options: {
-                    "presets": [["@babel/preset-env", {
-                        useBuiltIns: 'usage' //做babel-polyfill填充的时候不是把所有的都加进来，而是根据业务代码来加，比如业务代码用到了map，那么久只增加map垫片
-                    }]]
-                }
+                loader: "babel-loader"//只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
+                // options: {
+                //     // "presets": [["@babel/preset-env", {//适用于业务代码
+                //     //     targets: {
+                //     //         chrome: "67"//运行在版本大于67的chrome浏览器下
+                //     //     },
+                //     //     useBuiltIns: 'usage' //做babel-polyfill填充的时候不是把所有的都加进来，而是根据业务代码来加，比如业务代码用到了map，那么久只增加map垫片
+                //     // }]]
+                //     "plugins": [["@babel/plugin-transform-runtime", {//适用于库代码
+                //         "corejs": 2,
+                //         "helpers": true,
+                //         "regenerator": true,
+                //         "useESModules": false
+                //     }]]
+                // }
             },
             {
                 test: /\.(jpg|png|gif)$/,

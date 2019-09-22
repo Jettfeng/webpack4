@@ -39,6 +39,16 @@
 <p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，
 以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
 举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+<h2>3-12 使用 Babel 处理 ES6 语法（2）</h2>
+<p>安装@babel/plugin-transform-runtime：npm install --save-dev @babel/plugin-transform-runtime</p>
+<p>安装@babel/runtime：npm install --save @babel/runtime</p>
+<p>"plugins": [["@babel/plugin-transform-runtime", {</p>
+<p>"corejs": 2,</p>
+<p>"helpers": true,</p>
+<p>"regenerator": true,</p>
+<p>"useESModules": false</p>
+<p>}]]</p>
+<p>如果将babel-loader配置corejs该了，比如corejs：2，则需要额外安装：npm install --save @babel/runtime-corejs2</p>
 <p></p>
 <p></p>
 <p></p>
