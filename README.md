@@ -31,6 +31,17 @@
 <p>安装webpack-dev-server：npm install webpack-dev-server --save-dev</p>
 <p>安装在中间件：npm install --save-dev express webpack-dev-middleware</p>
 <h2>3-9 Hot Module Replacement 热模块更新（1）</h2>
-<p>3-10 Hot Module Replacement 热模块更新（2）</p>
+<h2>3-10 Hot Module Replacement 热模块更新（2）</h2>
+<h2>3-11 使用 Babel 处理 ES6 语法（1）</h2>
+<p>安装babel-loader @babel/core：npm install --save-dev babel-loader @babel/core</p>
+<p>安装@babel/preset-env（把es6翻译成es5）：npm install @babel/preset-env --save-dev</p>
+<p>安装@babel/polyfill（弥补低版本浏览器不支持的一些方法）：npm install --save @babel/polyfill</p>
+<p>Babel默认只转换新的JavaScript句法（syntax），而不转换新的API，比如Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise等全局对象，
+以及一些定义在全局对象上的方法（比如Object.assign）都不会转码。
+举例来说，ES6在Array对象上新增了Array.from方法。Babel就不会转码这个方法。如果想让这个方法运行，必须使用babel-polyfill，为当前环境提供一个垫片。</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <p></p>
 <p></p>

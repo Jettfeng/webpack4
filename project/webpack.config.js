@@ -19,6 +19,16 @@ module.exports = {
     module: {
         rules: [
             {
+                test: /\.js$/,
+                exclude: /node_modules/,
+                loader: "babel-loader",//只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
+                options: {
+                    "presets": [["@babel/preset-env", {
+                        useBuiltIns: 'usage' //做babel-polyfill填充的时候不是把所有的都加进来，而是根据业务代码来加，比如业务代码用到了map，那么久只增加map垫片
+                    }]]
+                }
+            },
+            {
                 test: /\.(jpg|png|gif)$/,
                 use: {
                     loader: 'url-loader',
