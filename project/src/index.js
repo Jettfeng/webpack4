@@ -1,7 +1,13 @@
-// Tree Shaking只支持ES Module
-// ES Module为静态引入
-// common Module 为动态引入
-// Tree Shaking只能静态引入
+console.log(_.join(['a','b','c'],'***'));
+// 此处省略10万行业务逻辑
+console.log(_.join(['a','b','c'],'***'));
 
-import { add } from './math'
-add(1, 4)
+// 如果lodash大小1mb
+//业务逻辑大小1mb
+//如果不压缩main.js为2mb
+// 大包文件会很大，加载时间会很长
+//如果改了代码，又要重新加载2mb的代码
+
+
+
+

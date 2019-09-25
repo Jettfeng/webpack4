@@ -4,7 +4,7 @@ const commonConfig = require('./webpack.common.js')
 
 const devConfig = {
     mode: 'development',//'production',//默认production，production会对代码进行压缩
-    devtool: 'inline-source-map', //配置source-map，如果关闭source-map，当打包后的文件有报错后，只提错误在打包后文件中的位置
+    devtool: 'cheap-module-source-map', //配置source-map，如果关闭source-map，当打包后的文件有报错后，只提错误在打包后文件中的位置
     devServer: {
         contentBase: './dist',
         open: true,
