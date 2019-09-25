@@ -59,7 +59,8 @@
 <p>}</p>
 <p>除了配置webpack.config.js还需要配置package.json,不然不会生效，package.json配置如下</p>
 <p>"sideEffects": false</p>
-<p></p>
+<h2>4-2 Develoment 和 Production 模式的区分打包</h2>
+<p>安装webpack-merge：npm install --save-dev webpack-merge</p>
 <p></p>
 <p></p>
 <p></p>
