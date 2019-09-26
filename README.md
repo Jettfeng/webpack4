@@ -63,7 +63,8 @@
 <p>安装webpack-merge：npm install --save-dev webpack-merge</p>
 <h2>4-3 Webpack 和 Code Splitting（1）</h2>
 <p>安装lodash：npm install lodash --save</p>
-<p></p>
+<h2>4-4 Webpack 和 Code Splitting（2）</h2>
+<p>安装@babel/plugin-syntax-dynamic-import：npm install --save-dev @babel/plugin-syntax-dynamic-import</p>
 <p></p>
 <p></p>
 <p></p>

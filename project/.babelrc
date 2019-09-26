@@ -10,5 +10,8 @@
             }
         ],
         "@babel/preset-react" //执行顺序从下到上，从右到左先执行@babel/preset-react，再执行@babel/preset-env
+    ],
+    "plugins": [
+        "@babel/plugin-syntax-dynamic-import"
     ]
 }

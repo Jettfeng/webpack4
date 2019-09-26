@@ -4,7 +4,6 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin")
 
 module.exports = {
     entry: {
-        lodash: './src/lodash.js',
         main: './src/index.js'
     },
     module: {
@@ -41,6 +40,11 @@ module.exports = {
         }),
         new CleanWebpackPlugin() //构建前清理dist文件夹
     ],
+    optimization: {
+        splitChunks: {//代码分割
+            chunks: 'all' //
+        }
+    },
     output: {
         filename: '[name].js',
         path: path.resolve(__dirname, '../dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
