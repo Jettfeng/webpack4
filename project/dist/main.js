@@ -113,7 +113,7 @@
 /******/
 /******/ 	var hotApplyOnUpdate = true;
 /******/ 	// eslint-disable-next-line no-unused-vars
-/******/ 	var hotCurrentHash = "6042e7d5ec6af637f3fb";
+/******/ 	var hotCurrentHash = "e7e9dabd0ea9cbbbaba1";
 /******/ 	var hotRequestTimeout = 10000;
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule;
@@ -885,20 +885,30 @@ console.log(lodash__WEBPACK_IMPORTED_MODULE_0___default.a.join(['a', 'b', 'c'], 
 // 第二种方式
 // main.js拆分成lodash.js(1mb) ,main.js(1mb)
 // 当业务逻辑发生变化时，只要加载main.js即可(1mb)
-
-function getComponent() {
-  return Promise.resolve(/*! import() */).then(__webpack_require__.t.bind(null, /*! lodash */ "./node_modules/lodash/lodash.js", 7)).then(({
-    default: _
-  }) => {
-    var element = document.createElement('div');
-    element.innerHTML = _.join(['Dell', 'Lee'], '-');
-    return element;
-  });
-}
-
-getComponent().then(element => {
-  document.body.appendChild(element);
-});
+// function getComponent() {
+//     return import(/* webpackChunkName:"lodash" */ 'lodash').then(({ default: _ }) => {
+//         var element = document.createElement('div')
+//         element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//         return element
+//     })
+// }
+// getComponent().then(element => {
+//     document.body.appendChild(element)
+// })
+// 代码分割和webpack无关
+// webpack实现代码分割，两种方式
+// 1.同步代码：只需要在webpack.common.js中做optimization的配置即可
+// 2.异步代码（import）：异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
+// function getComponent() {
+// 	return import(/* webpackChunkName:"lodash" */ 'lodash').then(({ default: _ }) => {
+// 		var element = document.createElement('div');
+// 		element.innerHTML = _.join(['Dell', 'Lee'], '-');
+// 		return element;
+// 	})
+// }
+// getComponent().then(element => {
+// 	document.body.appendChild(element);
+// });
 
 /***/ })
 

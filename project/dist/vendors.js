@@ -5,7 +5,7 @@
   !*** ./node_modules/lodash/lodash.js ***!
   \***************************************/
 /*! no static exports found */
-/*! all exports used */
+/*! exports used: default */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global, module) {var __WEBPACK_AMD_DEFINE_RESULT__;/**
@@ -17184,4 +17184,4 @@ module.exports = function(module) {
 /***/ })
 
 }]);
-//# sourceMappingURL=vendors~main.js.map
+//# sourceMappingURL=vendors.js.map

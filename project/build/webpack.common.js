@@ -41,8 +41,27 @@ module.exports = {
         new CleanWebpackPlugin() //构建前清理dist文件夹
     ],
     optimization: {
-        splitChunks: {//代码分割
-            chunks: 'all' //
+        splitChunks: {
+            chunks: 'all',//所有模块 async只打包异步 模块
+            minSize: 30000,//引入的苦大于30000字节（30kb）才做代码分割
+            maxSize: 0,
+            minChunks: 1,
+            maxAsyncRequests: 5,
+            maxInitialRequests: 3,
+            automaticNameDelimiter: '~',
+            name: true,
+            cacheGroups: {
+                vendors: {
+                    test: /[\\/]node_modules[\\/]/,
+                    priority: -10,
+                    filename: 'vendors.js' //默认打包结果为vendors-lodash，如果配置了filename，那么，所有从node_modules模块引入的模块都会打包到一起，名字为 vendors
+                },
+                default: {
+                    minChunks: 2,
+                    priority: -20,
+                    reuseExistingChunk: true
+                }
+            }
         }
     },
     output: {

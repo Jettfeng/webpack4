@@ -12,19 +12,29 @@ console.log(_.join(['a', 'b', 'c'], '***'));
 // main.js拆分成lodash.js(1mb) ,main.js(1mb)
 // 当业务逻辑发生变化时，只要加载main.js即可(1mb)
 
-function getComponent() {
-    return import('lodash').then(({ default: _ }) => {
-        var element = document.createElement('div')
-        element.innerHTML = _.join(['Dell', 'Lee'], '-')
-        return element
-    })
-}
-
-getComponent().then(element => {
-    document.body.appendChild(element)
-})
-
+// function getComponent() {
+//     return import(/* webpackChunkName:"lodash" */ 'lodash').then(({ default: _ }) => {
+//         var element = document.createElement('div')
+//         element.innerHTML = _.join(['Dell', 'Lee'], '-')
+//         return element
+//     })
+// }
+// getComponent().then(element => {
+//     document.body.appendChild(element)
+// })
 // 代码分割和webpack无关
 // webpack实现代码分割，两种方式
 // 1.同步代码：只需要在webpack.common.js中做optimization的配置即可
 // 2.异步代码（import）：异步代码，无需做任何配置，会自动进行代码分割，放置到新的文件中
+
+// function getComponent() {
+// 	return import(/* webpackChunkName:"lodash" */ 'lodash').then(({ default: _ }) => {
+// 		var element = document.createElement('div');
+// 		element.innerHTML = _.join(['Dell', 'Lee'], '-');
+// 		return element;
+// 	})
+// }
+
+// getComponent().then(element => {
+// 	document.body.appendChild(element);
+// });
