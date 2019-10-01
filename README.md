@@ -66,6 +66,7 @@
 <h2>4-4 Webpack 和 Code Splitting（2）</h2>
 <p>安装@babel/plugin-syntax-dynamic-import：npm install --save-dev @babel/plugin-syntax-dynamic-import</p>
 <h2>4-5 SplitChunksPlugin 配置参数详解（1）</h2>
+<h2>4-6 SplitChunksPlugin 配置参数详解（2）</h2>
 <p></p>
 <p></p>
 <p></p>

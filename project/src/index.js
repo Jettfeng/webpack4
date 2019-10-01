@@ -1,7 +1,11 @@
+import test from './test'
+console.log(test.name);
+
 import _ from 'lodash'
-console.log(_.join(['a', 'b', 'c'], '***'));
-// 此处省略10万行业务逻辑
-console.log(_.join(['a', 'b', 'c'], '***'));
+import jquery from 'jquery'
+// console.log(_.join(['a', 'b', 'c'], '***'));
+// // 此处省略10万行业务逻辑
+// console.log(_.join(['a', 'b', 'c'], '***'));
 
 // 第一种方式
 // 首次访问页面时，加载main.js，（2mb）
