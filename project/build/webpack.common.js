@@ -42,7 +42,7 @@ module.exports = {
     ],
     optimization: {
         splitChunks: {
-            chunks: 'all'//所有模块 async只打包异步 模块
+            chunks: 'all'//所有模块 async只打包异步 模块，如果没有配置该选项，会默认chunks:'async'=>支队异步代码进行分割
         }
     },
     output: {

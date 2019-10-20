@@ -68,5 +68,6 @@
 <h2>4-5 SplitChunksPlugin 配置参数详解（1）</h2>
 <h2>4-6 SplitChunksPlugin 配置参数详解（2）</h2>
 <h2>4-7 Lazy Loading 懒加载，Chunk 是什么？</h2>
-<p></p>
+<h2>1.把--profile --json > stats.json添加到打包命令中"dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.js"，打包后根目录下有个stats.josn文件，是对打包过程的描述</h2>
+<p>2.打开https://webpack.github.io/analyse/，选择跟目录下的stats.josn文件</p>
 <p></p>
