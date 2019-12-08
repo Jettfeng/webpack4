@@ -23,14 +23,6 @@ module.exports = {
                         limit: 10240 //图片小于10240打包成base64，大于等于10240kb，打包到dist目录下的images目录下
                     }
                 }
-            },
-            {
-                test: /\.scss$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'] //sass-loader将scss编译成css
-            },
-            {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader', 'postcss-loader']
             }
         ]
     },
@@ -41,12 +33,14 @@ module.exports = {
         new CleanWebpackPlugin() //构建前清理dist文件夹
     ],
     optimization: {
+        usedExports: true,//tree shaking,production环境默认函数有效
         splitChunks: {
             chunks: 'all'//所有模块 async只打包异步 模块，如果没有配置该选项，会默认chunks:'async'=>支队异步代码进行分割
         }
     },
     output: {
         filename: '[name].js',
+        chunkFilename: '[name].chunk.js',//非入口js文件
         path: path.resolve(__dirname, '../dist') //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
     }
 }

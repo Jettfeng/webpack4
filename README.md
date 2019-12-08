@@ -70,4 +70,6 @@
 <h2>4-7 Lazy Loading 懒加载，Chunk 是什么？</h2>
 <h2>1.把--profile --json > stats.json添加到打包命令中"dev-build": "webpack --profile --json > stats.json --config ./build/webpack.dev.js"，打包后根目录下有个stats.josn文件，是对打包过程的描述</h2>
 <p>2.打开https://webpack.github.io/analyse/，选择跟目录下的stats.josn文件</p>
-<p></p>
+<h2>4-9 CSS 文件的代码分割</h2>
+<p>安装MiniCssExtractPlugin:npm install --save-dev mini-css-extract-plugin(暂不支持热更新，适用于打包生产环境)</p>
+<p>npm install --save-dev optimize-css-assets-webpack-plugin(压缩css)</p>

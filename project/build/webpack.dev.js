@@ -11,12 +11,21 @@ const devConfig = {
         hot: true, //模块热更新
         //hotOnly: true //浏览器不自动刷新,默认报错的时候HMR会重新刷新页面
     },
+    module: {
+        rules: [
+            {
+                test: /\.scss$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader'] //sass-loader将scss编译成css
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader', 'css-loader', 'postcss-loader']
+            }
+        ]
+    },
     plugins: [
         new webpack.HotModuleReplacementPlugin() //HMR
-    ],
-    optimization: { //tree shaking,production环境默认函数有效
-        usedExports: true
-    }
+    ]
 }
 
 module.exports = merge(commonConfig, devConfig)
