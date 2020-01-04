@@ -1,6 +1,6 @@
 const webpack = require('webpack')
-const merge = require('webpack-merge')
-const commonConfig = require('./webpack.common.js')
+// const merge = require('webpack-merge')
+// const commonConfig = require('./webpack.common.js')
 
 const devConfig = {
     mode: 'development',//'production',//默认production，production会对代码进行压缩
@@ -32,4 +32,4 @@ const devConfig = {
     }
 }
 
-module.exports = merge(commonConfig, devConfig)
+module.exports = devConfig

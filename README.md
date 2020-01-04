@@ -75,3 +75,33 @@
 <p>npm install --save-dev optimize-css-assets-webpack-plugin(压缩css)</p>
 <h2>4-10 Webpack 与浏览器缓存( Caching )</h2>
 <h2>4-11 Shimming 的作用</h2>
+<h2>4-12 环境变量的使用方法</h2>
+<p> "build": "webpack --env.production --config ./build/webpack.common.js"</p>
+<p> --env.production:向全局变量env传入production，默认为true</p>
+<p>也可以这样写：</p>
+<p>"build": "webpack --env.production --config ./build/webpack.common.js"</p>
+<p>"build": "webpack --env production --config ./build/webpack.common.js"，webpack.common.js里面的
+<p>module.exports = env => {</p>
+<p>if (env && env.production) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<p>需要改成：</p>
+<p>module.exports = production => {</p>
+<p>if (production) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<p>或者："build": "webpack --env.production=abc --config ./build/webpack.common.js"</p>
+<p>module.exports = env => {</p>
+<p>if (env&&env.production === abc) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<p></p>

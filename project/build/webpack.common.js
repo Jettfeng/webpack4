@@ -1,23 +1,26 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
-const webpack = require('webpack')
+const webpack = require("webpack");
+const merge = require("webpack-merge");
+const devConfig = require("./webpack.dev");
+const prodConfig = require("./webpack.prod");
 
-module.exports = {
+const commonConfig = {
   entry: {
-    main: './src/index.js'
+    main: "./src/index.js"
   },
   module: {
     rules: [
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        use:[
+        use: [
           {
             loader: "babel-loader" //只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
           },
           {
-            loader:'imports-loader?this=>window' //使用imports-loader，并且this指向window
+            loader: "imports-loader?this=>window" //使用imports-loader，并且this指向window
           }
         ]
       },
@@ -40,14 +43,14 @@ module.exports = {
     }),
     new CleanWebpackPlugin(), //构建前清理dist文件夹
     new webpack.ProvidePlugin({
-      $:'jquery' ,//如果模块里面引用了$,改模块自动引入jquery
-      _:'lodash',
-      _join:['lodash','join'] //_join代码lodash里面的join方法
+      $: "jquery", //如果模块里面引用了$,改模块自动引入jquery
+      _: "lodash",
+      _join: ["lodash", "join"] //_join代码lodash里面的join方法
     })
   ],
   optimization: {
-    runtimeChunk:{
-      name:'runtime'
+    runtimeChunk: {
+      name: "runtime"
     },
     usedExports: true, //tree shaking,production环境默认函数有效
     splitChunks: {
@@ -66,5 +69,15 @@ module.exports = {
     filename: "[name].js",
     chunkFilename: "[name].chunk.js", //非入口js文件
     path: path.resolve(__dirname, "../dist") //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
+  }
+};
+
+module.exports = env => {
+  console.log(env)
+  if (env && env.production) {
+    //线上环境
+    return merge(commonConfig, prodConfig);
+  } else {
+    return merge(commonConfig, devConfig);
   }
 };
