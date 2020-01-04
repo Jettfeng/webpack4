@@ -1,3 +1,8 @@
-import './style.css'
-import './style1.css'
-console.log('hello word')
+import _ from 'lodash'
+import $ from 'jquery'
+
+const dom = $('div')
+dom.html(_.join(['dell','lee'],' '))
+$('#root').append(dom)
+console.log('xxxxxxxx');
+

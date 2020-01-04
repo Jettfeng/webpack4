@@ -73,3 +73,4 @@
 <h2>4-9 CSS 文件的代码分割</h2>
 <p>安装MiniCssExtractPlugin:npm install --save-dev mini-css-extract-plugin(暂不支持热更新，适用于打包生产环境)</p>
 <p>npm install --save-dev optimize-css-assets-webpack-plugin(压缩css)</p>
+<h2>4-10 Webpack 与浏览器缓存( Caching )</h2>

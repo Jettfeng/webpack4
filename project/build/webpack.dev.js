@@ -25,7 +25,11 @@ const devConfig = {
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin() //HMR
-    ]
+    ],
+    output: {
+      filename: "[name].js",
+      chunkFilename: "[name].js" //非入口js文件
+    }
 }
 
 module.exports = merge(commonConfig, devConfig)
