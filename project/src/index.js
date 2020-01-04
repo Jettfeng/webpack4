@@ -1,8 +1,13 @@
-import _ from 'lodash'
-import $ from 'jquery'
+console.log(this) //一个模块的this指向自身
+console.log(this===window) //true
 
-const dom = $('div')
-dom.html(_.join(['dell','lee'],' '))
-$('#root').append(dom)
-console.log('xxxxxxxx');
+// import _ from 'lodash'
+// import $ from 'jquery'
+// import {ui} from './jquery.ui'
+
+// ui()
+// const dom = $('div')
+// dom.html(_.join(['dell','lee'],' '))
+// $('#root').append(dom)
+
 

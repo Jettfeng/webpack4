@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
+const webpack = require('webpack')
 
 module.exports = {
   entry: {
@@ -11,7 +12,14 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: "babel-loader" //只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
+        use:[
+          {
+            loader: "babel-loader" //只是帮助识别js文件，把es6翻译成es5还需要@babel/preset-env
+          },
+          {
+            loader:'imports-loader?this=>window' //使用imports-loader，并且this指向window
+          }
+        ]
       },
       {
         test: /\.(jpg|png|gif)$/,
@@ -30,7 +38,12 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/index.html"
     }),
-    new CleanWebpackPlugin() //构建前清理dist文件夹
+    new CleanWebpackPlugin(), //构建前清理dist文件夹
+    new webpack.ProvidePlugin({
+      $:'jquery' ,//如果模块里面引用了$,改模块自动引入jquery
+      _:'lodash',
+      _join:['lodash','join'] //_join代码lodash里面的join方法
+    })
   ],
   optimization: {
     runtimeChunk:{

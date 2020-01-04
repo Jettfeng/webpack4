@@ -74,3 +74,4 @@
 <p>安装MiniCssExtractPlugin:npm install --save-dev mini-css-extract-plugin(暂不支持热更新，适用于打包生产环境)</p>
 <p>npm install --save-dev optimize-css-assets-webpack-plugin(压缩css)</p>
 <h2>4-10 Webpack 与浏览器缓存( Caching )</h2>
+<h2>4-11 Shimming 的作用</h2>
