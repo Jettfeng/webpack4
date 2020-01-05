@@ -104,4 +104,5 @@
 <p>return merge(commonConfig, devConfig);</p>
 <p> }</p>
 <p>}</p>
-<p></p>
+<h2>5-1 Library 的打包</h2>
+<p>安装webpack，webpack-cli:npm install webpack webpack-cli --save-dev</p>
