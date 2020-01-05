@@ -1,13 +1,16 @@
-console.log(this) //一个模块的this指向自身
-console.log(this===window) //true
+console.log('hello,this is xxFeng');
 
-// import _ from 'lodash'
-// import $ from 'jquery'
-// import {ui} from './jquery.ui'
-
-// ui()
-// const dom = $('div')
-// dom.html(_.join(['dell','lee'],' '))
-// $('#root').append(dom)
-
-
+if ("serviceWorker" in navigator) {
+  //如果浏览器 支持serviceWorker
+  window.addEventListener("load", () => {
+    //  页面加载完成
+    navigator.serviceWorker
+      .register("/service-worker.js")
+      .then(registration => {
+        console.log("SW registered: ", registration);
+      })
+      .catch(registrationError => {
+        console.log("SW registration failed: ", registrationError);
+      });
+  });
+}
