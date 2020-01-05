@@ -106,8 +106,12 @@
 <p>}</p>
 <h2>5-1 Library 的打包</h2>
 <p>安装webpack，webpack-cli:npm install webpack webpack-cli --save-dev</p>
-<h2> 5-2 PWA 的打包配置</h2>
+<h2>5-2 PWA 的打包配置</h2>
 <p>安装http-server：npm install http-server --save-dev</p>
 <p>安装workbox-webpack-plugin：npm install workbox-webpack-plugin --save-dev</p>
+<h2>5-3 TypeScript 的打包配置</h2>
+<p>安装webpack:npm install webpack webpack-cli --save-dev</p>
+<p>安装ts-loader:npm install --save-dev typescript ts-loader</p>
+<p></p>
 <p></p>
 <p></p>
