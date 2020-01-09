@@ -75,3 +75,47 @@
 <p>npm install --save-dev optimize-css-assets-webpack-plugin(压缩css)</p>
 <h2>4-10 Webpack 与浏览器缓存( Caching )</h2>
 <h2>4-11 Shimming 的作用</h2>
+<h2>4-12 环境变量的使用方法</h2>
+<p> "build": "webpack --env.production --config ./build/webpack.common.js"</p>
+<p> --env.production:向全局变量env传入production，默认为true</p>
+<p>也可以这样写：</p>
+<p>"build": "webpack --env.production --config ./build/webpack.common.js"</p>
+<p>"build": "webpack --env production --config ./build/webpack.common.js"，webpack.common.js里面的
+<p>module.exports = env => {</p>
+<p>if (env && env.production) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<p>需要改成：</p>
+<p>module.exports = production => {</p>
+<p>if (production) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<p>或者："build": "webpack --env.production=abc --config ./build/webpack.common.js"</p>
+<p>module.exports = env => {</p>
+<p>if (env&&env.production === abc) {</p>
+<p>return merge(commonConfig, prodConfig);</p>
+<p> } else {</p>
+<p>return merge(commonConfig, devConfig);</p>
+<p> }</p>
+<p>}</p>
+<h2>5-1 Library 的打包</h2>
+<p>安装webpack，webpack-cli:npm install webpack webpack-cli --save-dev</p>
+<h2>5-2 PWA 的打包配置</h2>
+<p>安装http-server：npm install http-server --save-dev</p>
+<p>安装workbox-webpack-plugin：npm install workbox-webpack-plugin --save-dev</p>
+<h2>5-3 TypeScript 的打包配置</h2>
+<p>安装webpack:npm install webpack webpack-cli --save-dev</p>
+<p>安装ts-loader:npm install --save-dev typescript ts-loader</p>
+<h2>5-4 使用 WebpackDevServer 实现请求转发</h2>
+<h2>5-5 WebpackDevServer 解决单页面应用路由问题</h2>
+<p>1.安装react-router-dom：npm install react-router-dom --save</p>
+<h2>5-6 EsLint 在 Webpack 中的配置（1）</h2>
+<p>1.安装eslint：npm install eslint --save-dev</p>
+<h2>5-8 webpack 性能优化(1)</h2>
+<p></p>
