@@ -113,6 +113,7 @@
 <p>安装webpack:npm install webpack webpack-cli --save-dev</p>
 <p>安装ts-loader:npm install --save-dev typescript ts-loader</p>
 <h2>5-4 使用 WebpackDevServer 实现请求转发</h2>
-<p></p>
+<h2>5-5 WebpackDevServer 解决单页面应用路由问题</h2>
+<p>1.安装react-router-dom：npm install react-router-dom --save</p>
 <p></p>
 <p></p>

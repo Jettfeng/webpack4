@@ -14,7 +14,8 @@ module.exports = {
 		open: true,
 		port: 8080,
 		hot: true,
-		hotOnly: true,
+    hotOnly: true,
+    historyApiFallback: true,//单也应用需要的配置，如果没有该配置，路由跳转会失败,可以配置为对象，如果配置为ture，等价于访问任何路径重定向到index.html
 		proxy: {
 			'/api': {
 				target: 'https://www.easy-mock.com/mock/5d2a9caa1bba03305e100ec5/api',
