@@ -115,5 +115,6 @@
 <h2>5-4 使用 WebpackDevServer 实现请求转发</h2>
 <h2>5-5 WebpackDevServer 解决单页面应用路由问题</h2>
 <p>1.安装react-router-dom：npm install react-router-dom --save</p>
-<p></p>
+<h2>5-6 EsLint 在 Webpack 中的配置（1）</h2>
+<p>1.安装eslint：npm install eslint --save-dev</p>
 <p></p>
