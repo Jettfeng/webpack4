@@ -112,6 +112,7 @@
 <h2>5-3 TypeScript 的打包配置</h2>
 <p>安装webpack:npm install webpack webpack-cli --save-dev</p>
 <p>安装ts-loader:npm install --save-dev typescript ts-loader</p>
+<h2>5-4 使用 WebpackDevServer 实现请求转发</h2>
 <p></p>
 <p></p>
 <p></p>
