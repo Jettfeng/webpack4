@@ -123,8 +123,9 @@
 <p>  extensions:['.js','.jsx']</p>
 <p>}</p>
 <p>resolve一般配置js，jsx，vue之类的文件，如果太多，node查找文件会消耗较多时间</p>
-<p></p>
-<p></p>
+<h2>5-10 Webpack 性能优化(3)</h2>
+<p>安装：npm install add-asset-html-webpack-plugin --save</p>
+<p>目标：第三方模块只打包一次</p>
 <p></p>
 <p></p>
 <p></p>
