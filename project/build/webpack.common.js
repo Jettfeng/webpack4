@@ -7,10 +7,17 @@ module.exports = {
   entry: {
     main: './src/index.js'
   },
+  resolve:{
+    extensions:['.js','.jsx'],
+    mainFiles: ["index",'child'],  //同一个文件夹下，index.js优先于child.js
+    alias:{
+      xxfeng: path.resolve(__dirname, '../src/child')
+    }
+  },
   module: {
     rules: [
       {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         // exclude: /node_modules/,
         include: path.resolve(__dirname,'../src'),
         use:[

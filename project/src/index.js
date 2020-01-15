@@ -1,13 +1,17 @@
-console.log(this) //一个模块的this指向自身
-console.log(this===window) //true
+import React, { Component } from "react";
+import ReactDom from "react-dom";
+// import Child from './child/'
+import Child from 'xxfeng'
 
-// import _ from 'lodash'
-// import $ from 'jquery'
-// import {ui} from './jquery.ui'
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <div>this is app</div>
+        <Child />
+      </div>
+    );
+  }
+}
 
-// ui()
-// const dom = $('div')
-// dom.html(_.join(['dell','lee'],' '))
-// $('#root').append(dom)
-
-
+ReactDom.render(<App />, document.getElementById("root"));

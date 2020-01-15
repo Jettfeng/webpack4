@@ -118,4 +118,17 @@
 <h2>5-6 EsLint 在 Webpack 中的配置（1）</h2>
 <p>1.安装eslint：npm install eslint --save-dev</p>
 <h2>5-8 webpack 性能优化(1)</h2>
+<h2>5-9 webpack 性能优化(2)</h2>
+<p>resolve:{</p>
+<p>  extensions:['.js','.jsx']</p>
+<p>}</p>
+<p>resolve一般配置js，jsx，vue之类的文件，如果太多，node查找文件会消耗较多时间</p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <p></p>
