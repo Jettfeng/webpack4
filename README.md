@@ -126,7 +126,8 @@
 <h2>5-10 Webpack 性能优化(3)</h2>
 <p>安装：npm install add-asset-html-webpack-plugin --save</p>
 <p>目标：第三方模块只打包一次</p>
-<p></p>
+<h2>5-11 Webpack 性能优化(4)</h2>
+<p>DLLPlugin 和 DLLReferencePlugin 用某种方法实现了拆分 bundles，同时还大大提升了构建的速度。</p>
 <p></p>
 <p></p>
 <p></p>

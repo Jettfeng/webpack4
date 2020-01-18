@@ -1,8 +1,35 @@
 const path = require("path");
+const fs = require("fs");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin"); //插入静态资源插件
 const webpack = require("webpack");
+
+const plugins = [
+  new HtmlWebpackPlugin({
+    template: "src/index.html"
+  }),
+  new CleanWebpackPlugin() //构建前清理dist文件夹
+];
+
+const files = fs.readdirSync(path.resolve(__dirname, "../dll"))
+console.log(files);
+files.forEach(file => {
+  if (/.*\.dll.js/.test(file)) {
+    plugins.push(
+      new AddAssetHtmlWebpackPlugin({ //将dll中的js文件挂在到html文件上
+        filepath: path.resolve(__dirname, "../dll", file)
+      })
+    );
+  }
+  if (/.*\.mainfest.json/.test(file)) {
+    plugins.push(
+      new webpack.DllReferencePlugin({
+        manifest: path.resolve(__dirname, "../dll", file)
+      })
+    );
+  }
+});
 
 module.exports = {
   entry: {
@@ -37,18 +64,7 @@ module.exports = {
       }
     ]
   },
-  plugins: [
-    new HtmlWebpackPlugin({
-      template: "src/index.html"
-    }),
-    new CleanWebpackPlugin(), //构建前清理dist文件夹
-    new AddAssetHtmlWebpackPlugin({
-      filepath: path.resolve(__dirname, "../dll/vendors.dll.js")
-    }),
-    new webpack.DllReferencePlugin({
-      manifest: path.resolve(__dirname, "../dll/vendors.mainfest.json")
-    })
-  ],
+  plugins,
   optimization: {
     runtimeChunk: {
       name: "runtime"

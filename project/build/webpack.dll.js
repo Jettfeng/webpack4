@@ -4,7 +4,9 @@ const webpack = require('webpack')
 module.exports = {
   mode: "production",
   entry: {
-    vendors: ["react", "react-dom", "lodash"]
+    vendors: ["lodash"],  //对第三方模块单独进行打包
+    react:["react", "react-dom"],
+    jquery:["jquery"]
   },
   output: {
     filename: "[name].dll.js",
@@ -12,7 +14,7 @@ module.exports = {
     library:'[name]'
   },
   plugins: [
-    new webpack.DllPlugin({
+    new webpack.DllPlugin({ //生成mainfest映射文件
       name:"[name]", //跟output中的library保持一致
       path:path.resolve(__dirname,'../dll/[name].mainfest.json')
     })
