@@ -5,35 +5,62 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const AddAssetHtmlWebpackPlugin = require("add-asset-html-webpack-plugin"); //插入静态资源插件
 const webpack = require("webpack");
 
+const makePlugins = configs => {
+  const plugins = [
+    new CleanWebpackPlugin() //构建前清理dist文件夹
+  ];
+
+  Object.keys(configs.entry).forEach(item => {
+    plugins.push(
+      new HtmlWebpackPlugin({
+        template: "src/index.html",
+        filename: `${item}.html`,
+        chunks: ["runtime", "vendors", item]
+      })
+    );
+  });
+
+  const files = fs.readdirSync(path.resolve(__dirname, "../dll"));
+  console.log(files);
+  files.forEach(file => {
+    if (/.*\.dll.js/.test(file)) {
+      plugins.push(
+        new AddAssetHtmlWebpackPlugin({
+          //将dll中的js文件挂在到html文件上
+          filepath: path.resolve(__dirname, "../dll", file)
+        })
+      );
+    }
+    if (/.*\.mainfest.json/.test(file)) {
+      plugins.push(
+        new webpack.DllReferencePlugin({
+          manifest: path.resolve(__dirname, "../dll", file)
+        })
+      );
+    }
+  });
+
+  return plugins;
+};
+
 const plugins = [
   new HtmlWebpackPlugin({
-    template: "src/index.html"
+    template: "src/index.html",
+    filename: "index.html",
+    chunks: ["runtime", "vendors", "main"]
   }),
-  new CleanWebpackPlugin() //构建前清理dist文件夹
+  new HtmlWebpackPlugin({
+    template: "src/index.html",
+    filename: "list.html",
+    chunks: ["runtime", "vendors", "list"]
+  })
 ];
 
-const files = fs.readdirSync(path.resolve(__dirname, "../dll"))
-console.log(files);
-files.forEach(file => {
-  if (/.*\.dll.js/.test(file)) {
-    plugins.push(
-      new AddAssetHtmlWebpackPlugin({ //将dll中的js文件挂在到html文件上
-        filepath: path.resolve(__dirname, "../dll", file)
-      })
-    );
-  }
-  if (/.*\.mainfest.json/.test(file)) {
-    plugins.push(
-      new webpack.DllReferencePlugin({
-        manifest: path.resolve(__dirname, "../dll", file)
-      })
-    );
-  }
-});
-
-module.exports = {
+const configs = {
   entry: {
-    main: "./src/index.js"
+    index: "./src/index.js",
+    list: "./src/list.js",
+    detail:'./src/detail.js'
   },
   resolve: {
     extensions: [".js", ".jsx"],
@@ -64,7 +91,6 @@ module.exports = {
       }
     ]
   },
-  plugins,
   optimization: {
     runtimeChunk: {
       name: "runtime"
@@ -88,3 +114,7 @@ module.exports = {
     path: path.resolve(__dirname, "../dist") //__dirname指的是webpack.config.js(默认配置文件)文件所在的目录
   }
 };
+
+configs.plugins = makePlugins(configs);
+
+module.exports = configs;
