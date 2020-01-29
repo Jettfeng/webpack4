@@ -1,16 +1,17 @@
 {
-  "name": "make-loader",
+  "name": "plugin",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "webpack"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "debug":"node --inspect --inspect-brk  node_modules/webpack/bin/webpack.js",
+    "build":"webpack"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "loader-utils": "^1.2.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10"
   }
