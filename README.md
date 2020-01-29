@@ -413,6 +413,7 @@
 <h2>5-13 多页面打包配置</h2>
 <h2>6-1 如何编写一个 Loader（1）</h2>
 <p>安装：loader-utils：npm install loader-utils --save-dev</p>
+<h2>6-2 如何编写一个 Loader（2）</h2>
 <p></p>
 <p></p>
 <p></p>
