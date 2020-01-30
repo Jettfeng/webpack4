@@ -422,6 +422,18 @@
 <h2>6-5 Bundler 源码编写（模块分析 2）</h2>
 <p>安装@babel/core :npm install @babel/core --save</p>
 <p>安装@babel/preset-env：npm install @babel/preset-env --save</p>
+<h2>6-6 Bundler 源码编写（ Dependencies Graph ）</h2>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
+<p></p>
 <p></p>
 <p></p>
 <p></p>
