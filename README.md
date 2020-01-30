@@ -415,9 +415,10 @@
 <p>安装：loader-utils：npm install loader-utils --save-dev</p>
 <h2>6-2 如何编写一个 Loader（2）</h2>
 <h2>6-3 如何编写一个 Plugin</h2>
-<p></p>
-<p></p>
-<p></p>
+<h2>6-4 Bundler 源码编写（模块分析 1）</h2>
+<p>安装cli-highlight：npm install cli-highlight -g </p>
+<p>安装@babel/parser :npm install @babel/parser --save</p>
+<p>安装@babel/traverse :npm install @babel/traverse --save</p>
 <p></p>
 <p></p>
 <p></p>
