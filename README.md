@@ -419,8 +419,9 @@
 <p>安装cli-highlight：npm install cli-highlight -g </p>
 <p>安装@babel/parser :npm install @babel/parser --save</p>
 <p>安装@babel/traverse :npm install @babel/traverse --save</p>
-<p></p>
-<p></p>
+<h2>6-5 Bundler 源码编写（模块分析 2）</h2>
+<p>安装@babel/core :npm install @babel/core --save</p>
+<p>安装@babel/preset-env：npm install @babel/preset-env --save</p>
 <p></p>
 <p></p>
 <p></p>
